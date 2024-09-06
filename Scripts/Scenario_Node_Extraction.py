@@ -11,7 +11,7 @@ from shapely import wkt
 
 # File name of the scenario input file and output file of aggregated
 
-path = "C:\\Users\\mym852\\OneDrive - AFRY\\Documents\\MA_Files\\"
+path = ".\\"
 
 Network_file =  path +'Results_Pathway\\CSV\\Pathway-Network-EnInd-DH-2023-08-10.csv'
 NG_nodes = path + 'Input\\IGGIELGN_Network0_nodesgdf.csv'
