@@ -38,22 +38,22 @@ See https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e8
 ### PuLP Model Setup
 A linear programming model is created using **PuLP** to minimize the total flow cost across the network. The objective function is designed to minimize costs related to retrofitting pipelines that are necessary to ensure flow.
 
-- ** Model initiation and variable definition**
-  See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L224-L231
+- **Model initiation and variable definition**
+  https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L224-L231
 
 - **Objective function**: Minimizing retrofitting costs when a pipeline is required  
-  See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L234
+  https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L234
 
 - **Flow conservation constraint**: Ensures that at each node, inflow equals outflow  
-  See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L237-L239
+  https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L237-L239
 
 - **Capacity constraint**: Ensures that flow through each edge does not exceed its capacity  
-  See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L241-L243
+  https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L241-L243
 
-- ** Binary constraint**:
-  See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L245-L247
+- **Binary constraint**:
+  https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L245-L247
 
 ### Parallel Pipeline Handling
 
-One major challenge in implementing this model was handling parallel pipelines within the SciGrid dataset. These needed to be identified, and both the cost and capacity were adjusted accordingly: This was needed  due to the unique naming requirements of the edges in the dataset.
+One major challenge in implementing this model was the aggregation of parallel pipelines within the SciGrid dataset. For identified parallel pipelines, capacities were cummulated while cost were averaged resulting in preferred retrofitting of parallel infrastructure. For the final cost calculation, parallel pipelines are disaggregated and retrofitting is adjusted based on actual utilization. 
 See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L94-L134
