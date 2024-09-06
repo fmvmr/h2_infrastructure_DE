@@ -30,7 +30,7 @@ Date = str(date.today())
 save_geojson= False
 save_csv = False
 # overall network
-path = "C:\\Users\\mym852\\OneDrive - AFRY\\Documents\\MA_Files\\" 
+path = ".\\" 
 
 # Target pathway file 
 Scenario_file = path + 'Results_Pathway\\Inputs\\04_Scenario-EnInd-Trucks-DH-2023-08-02.csv'

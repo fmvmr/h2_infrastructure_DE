@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 Date = str(date.today())
 
 #Path to the MA Input folder
-path = "C:\\Users\\mym852\\OneDrive - AFRY\\Documents\\MA_Files\\"
+path = ".\\"
 file_name = path +"Scenarios\\00_Scenario_BaseCase_Final.xlsx"
 to_file = path +'Scenarios\\Inputs\\00_Scenario-Base'+Date+'.csv'
 

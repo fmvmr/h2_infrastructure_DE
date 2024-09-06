@@ -27,7 +27,7 @@ Date = str(date.today())
 save_geojson= False
 save_csv = False
 
-path = "C:\\Users\\mym852\\OneDrive - AFRY\\Documents\\MA_Files\\"
+path = ".\\"
 Scenario_file = path + 'Input\\00_Scenario-Base-2023-08-02.csv'
 
 to_file_geojson =  path +'Results\\GeoJSON\\Scenario-Base-'+Date+'.geojson'
@@ -428,9 +428,10 @@ demand_nodes.plot(ax=ax,
 
 sm = plt.cm.ScalarMappable(cmap=my_cmap, norm=plt.Normalize(vmin=int(min(network_flow.net_flow)), vmax=int(max(network_flow.net_flow))))
 
-plt.colorbar(sm, label ='Energy Flow [MWh/h]',fraction=0.04, pad=0.03)
+plt.colorbar(sm, ax=ax, label ='Energy Flow [MWh/h]',fraction=0.04, pad=0.03)
 plt.legend(loc = 'lower left')
 plt.axis('off')
+plt.show()
 
 
 
@@ -461,7 +462,7 @@ nodes_demand.plot(ax=ax,
 
 plt.legend(loc = 'lower left')
 plt.axis('off')
-
+plt.show()
 
 
 ''' Capacity Utilization Visualisation'''
@@ -501,6 +502,7 @@ Manipulated.plot(ax=ax,
 
 plt.legend(loc = 'lower left', ncol = 3)
 plt.axis('off')
+plt.show()
 
 
 '''OUTLOOK: Visualisation of Trucks Usage'''
@@ -529,4 +531,5 @@ Trucks.plot(ax=ax,
 
 plt.legend(loc = 'lower left')
 plt.axis('off')
+plt.show()
 
