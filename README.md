@@ -35,11 +35,6 @@ The input data is first merged and structured to define the pipeline network, in
 
 See https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L184-L221
 
-### Parallel Pipeline Handling
-
-One major challenge in implementing this model was handling parallel pipelines within the SciGrid dataset. These needed to be identified, and both the cost and capacity were adjusted accordingly: This was needed  due to the unique naming requirements of the edges in the dataset.
-See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L94-L134
-
 ### PuLP Model Setup
 A linear programming model is created using **PuLP** to minimize the total flow cost across the network. The objective function is designed to minimize costs related to retrofitting pipelines that are necessary to ensure flow.
 
@@ -58,4 +53,7 @@ A linear programming model is created using **PuLP** to minimize the total flow 
 - ** Binary constraint**:
   See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L245-L247
 
+### Parallel Pipeline Handling
 
+One major challenge in implementing this model was handling parallel pipelines within the SciGrid dataset. These needed to be identified, and both the cost and capacity were adjusted accordingly: This was needed  due to the unique naming requirements of the edges in the dataset.
+See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L94-L134
