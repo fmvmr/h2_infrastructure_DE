@@ -33,7 +33,7 @@ This section highlights key parts of the code used for optimization.
 ### Inputs for the PuLP Optimization
 The input data is first merged and structured to define the pipeline network, including supply or demand nodes, and edges. The costs and capacities of each edge are assigned.
 
-See https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L184-L221
+https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L184-L221
 
 ### PuLP Model Setup
 A linear programming model is created using **PuLP** to minimize the total flow cost across the network. The objective function is designed to minimize costs related to retrofitting pipelines that are necessary to ensure flow.
@@ -56,4 +56,4 @@ A linear programming model is created using **PuLP** to minimize the total flow 
 ### Parallel Pipeline Handling
 
 One major challenge in implementing this model was the aggregation of parallel pipelines within the SciGrid dataset. For identified parallel pipelines, capacities were cummulated while cost were averaged resulting in preferred retrofitting of parallel infrastructure. For the final cost calculation, parallel pipelines are disaggregated and retrofitting is adjusted based on actual utilization. 
-See: https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L94-L134
+https://github.com/fmvmr/h2_infrastructure_DE/blob/d2269355df6e865f02a0117e800c6b78272e9023/Scripts/MA_Model.py#L94-L134
